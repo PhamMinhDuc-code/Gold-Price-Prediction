@@ -1,0 +1,30 @@
+{
+    "report_name": "demo_viz_comprehensive_report",
+    "generated_at": "2026-07-12T20:41:05.822778",
+    "metrics": {
+        "MAE": 7.562065861064793,
+        "RMSE": 9.49150750246561,
+        "MAPE": 0.4277880364432144,
+        "R2": 0.8312238355041522,
+        "Directional_Accuracy": 60.60606060606061
+    },
+    "predictions_summary": {
+        "count": 100,
+        "columns": [
+            "Date",
+            "Actual_Price",
+            "Predicted_Price",
+            "Lower_CI_95",
+            "Upper_CI_95",
+            "Prediction_Error",
+            "Error_Percentage"
+        ]
+    },
+    "plot_paths": [
+        "D:\\Gold Prediction\\reports\\demo_viz_comprehensive_report_plot_1.png",
+        "D:\\Gold Prediction\\reports\\demo_viz_comprehensive_report_plot_2.png",
+        "D:\\Gold Prediction\\reports\\demo_viz_comprehensive_report_plot_3.png",
+        "D:\\Gold Prediction\\reports\\demo_viz_comprehensive_report_plot_4.png"
+    ],
+    "predictions_csv_path": "D:\\Gold Prediction\\reports\\demo_viz_comprehensive_report_predictions.csv"
+}

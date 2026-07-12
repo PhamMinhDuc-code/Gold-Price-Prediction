@@ -16,6 +16,7 @@ from datetime import datetime
 import logging
 
 from src.logger import get_logger
+from src.exceptions import MissingValueThresholdError, DataQualityError
 from config import Config
 
 logger = get_logger(__name__)
@@ -91,10 +92,23 @@ class DataPreprocessor:
         df_copy = df.copy()
         missing_before = df_copy.isna().sum()
         
-        # Track missing values by column
+        # Check if missing values exceed threshold (Requirement 10.3)
+        total_records = len(df_copy)
         for column in df_copy.columns:
             if missing_before[column] > 0:
-                logger.info(f"{column}: {missing_before[column]} missing values detected")
+                missing_pct = (missing_before[column] / total_records) * 100
+                logger.info(f"{column}: {missing_before[column]} missing values ({missing_pct:.1f}%)")
+                
+                # Flag dataset as low quality if missing values exceed 20% threshold
+                if missing_pct > self.max_missing_pct:
+                    logger.warning(f"{column}: Missing value percentage ({missing_pct:.1f}%) exceeds threshold ({self.max_missing_pct}%)")
+                    logger.warning(f"Dataset flagged as LOW QUALITY for column: {column}")
+                    # Raise exception (Requirement 10.3)
+                    raise MissingValueThresholdError(
+                        feature_name=column,
+                        missing_pct=missing_pct,
+                        threshold_pct=self.max_missing_pct
+                    )
         
         # Apply forward-fill with limit
         df_filled = df_copy.ffill(limit=max_gap)

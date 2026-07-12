@@ -1,0 +1,21 @@
+{
+    "report_name": "test_report",
+    "generated_at": "2026-07-12T20:38:37.632575",
+    "metrics": {
+        "MAE": 10.5,
+        "RMSE": 15.2,
+        "MAPE": 2.3,
+        "R2": 0.95,
+        "Directional_Accuracy": 75.5
+    },
+    "predictions_summary": {
+        "count": 100,
+        "columns": [
+            "Date",
+            "Actual",
+            "Predicted"
+        ]
+    },
+    "plot_paths": [],
+    "predictions_csv_path": "D:\\Gold Prediction\\reports\\test_report_predictions.csv"
+}

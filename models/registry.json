@@ -1,0 +1,120 @@
+{
+  "models": [
+    {
+      "version": "v1.0.0_test",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:55:59.237901",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmprb_c1pgd\\model_v1.0.0_test",
+      "performance_metrics": {
+        "mae": 10.5,
+        "rmse": 15.2,
+        "r2": 0.85
+      }
+    },
+    {
+      "version": "v1.0.0_xgb_test",
+      "model_type": "XGBoost",
+      "training_date": "2026-07-12T00:56:01.383118",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpew3prreh\\model_v1.0.0_xgb_test",
+      "performance_metrics": {
+        "mae": 5.2,
+        "rmse": 7.1
+      }
+    },
+    {
+      "version": "v1.0.0_test",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:56:01.424825",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpcuuo0gmm\\model_v1.0.0_test",
+      "performance_metrics": {
+        "mae": 10.5,
+        "rmse": 15.2,
+        "r2": 0.85
+      }
+    },
+    {
+      "version": "v1.0.0",
+      "model_type": "LSTM",
+      "training_date": "2023-01-01T00:00:00",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpuj6hwkcu\\model_v1.0.0",
+      "performance_metrics": {
+        "mae": 10.0
+      }
+    },
+    {
+      "version": "v1.0.1",
+      "model_type": "LSTM",
+      "training_date": "2023-01-02T00:00:00",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpuj6hwkcu\\model_v1.0.1",
+      "performance_metrics": {
+        "mae": 10.0
+      }
+    },
+    {
+      "version": "v1.0.2",
+      "model_type": "LSTM",
+      "training_date": "2023-01-03T00:00:00",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpuj6hwkcu\\model_v1.0.2",
+      "performance_metrics": {
+        "mae": 10.0
+      }
+    },
+    {
+      "version": "v1.0.0",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:56:02.724869",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpzg1iyni0\\model_v1.0.0",
+      "performance_metrics": {
+        "mae": 10.0,
+        "rmse": 15.0,
+        "r2": 0.8
+      }
+    },
+    {
+      "version": "v1.0.1",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:56:02.751370",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpzg1iyni0\\model_v1.0.1",
+      "performance_metrics": {
+        "mae": 10.0,
+        "rmse": 15.0,
+        "r2": 0.8
+      }
+    },
+    {
+      "version": "v1.1.0",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:56:02.777971",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpzg1iyni0\\model_v1.1.0",
+      "performance_metrics": {
+        "mae": 10.0,
+        "rmse": 15.0,
+        "r2": 0.8
+      }
+    },
+    {
+      "version": "v2.0.0",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T00:56:02.802470",
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpzg1iyni0\\model_v2.0.0",
+      "performance_metrics": {
+        "mae": 10.0,
+        "rmse": 15.0,
+        "r2": 0.8
+      }
+    },
+    {
+      "version": "demo_v1.0",
+      "model_type": "LSTM",
+      "training_date": "2026-07-12T19:06:20.840289",
+      "path": "D:\\Gold Prediction\\models\\model_demo_v1.0",
+      "performance_metrics": {
+        "mae": 15.5,
+        "rmse": 22.3,
+        "r2": 0.82
+      },
+      "registered_at": "2026-07-12T19:06:20.841898"
+    }
+  ],
+  "last_updated": "2026-07-12T19:06:20.841901"
+}

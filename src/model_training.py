@@ -635,6 +635,12 @@ class ModelTrainingPipeline:
         """
         Save model with metadata and preprocessing parameters.
         
+        Saves:
+        - Keras models using native Keras format (.keras files)
+        - Scikit-learn/XGBoost models using joblib
+        - Metadata as JSON (version, hyperparams, features, metrics)
+        - Scaling parameters as pickle file
+        
         Args:
             model: Trained model to save
             metadata: Model metadata object
@@ -642,29 +648,49 @@ class ModelTrainingPipeline:
         
         Returns:
             Path to saved model directory
+        
+        Requirements: 5.5, 8.1, 8.2, 8.3
         """
+        import pickle
+        
         model_path = self.config.get_model_path(version, metadata.model_type)
         logger.info(f"Saving model to: {model_path}")
         
         try:
             # Save model based on type
             if metadata.model_type in ['LSTM', 'GRU']:
-                model.save(model_path / 'model.h5')
-                logger.info(f"Keras model saved to {model_path / 'model.h5'}")
+                # Save Keras models using native Keras format
+                model_file = model_path / 'model.keras'
+                model.save(model_file)
+                logger.info(f"Keras model saved to {model_file}")
             else:
-                joblib.dump(model, model_path / 'model.pkl')
-                logger.info(f"Scikit-learn/XGBoost model saved to {model_path / 'model.pkl'}")
+                # Save scikit-learn/XGBoost models using joblib
+                model_file = model_path / 'model.pkl'
+                joblib.dump(model, model_file)
+                logger.info(f"Scikit-learn/XGBoost model saved to {model_file}")
             
-            # Save metadata
+            # Save metadata as JSON (version, hyperparams, features, metrics)
             metadata_path = model_path / 'metadata.json'
             with open(metadata_path, 'w') as f:
                 json.dump(metadata.to_dict(), f, indent=2)
             logger.info(f"Metadata saved to {metadata_path}")
+            logger.debug(f"Metadata includes: version, hyperparameters, feature_list, "
+                        f"performance_metrics, training_data_range")
+            
+            # Save scaling parameters as pickle file
+            if metadata.scaling_params:
+                scaler_path = model_path / 'scaler.pkl'
+                with open(scaler_path, 'wb') as f:
+                    pickle.dump(metadata.scaling_params, f)
+                logger.info(f"Scaling parameters saved to {scaler_path}")
+            else:
+                logger.warning("No scaling parameters provided in metadata")
             
             # Update registry
             self._update_registry(metadata, model_path)
             
             logger.info(f"Model version {version} saved successfully")
+            logger.info(f"Saved files: model, metadata.json, scaler.pkl")
             return str(model_path)
             
         except Exception as e:
@@ -673,29 +699,17 @@ class ModelTrainingPipeline:
     
     def _update_registry(self, metadata: ModelMetadata, model_path: Path) -> None:
         """Update model registry with new model information."""
-        registry_file = self.config.REGISTRY_FILE
+        from src.model_registry import ModelRegistry
         
-        # Load existing registry or create new one
-        if registry_file.exists():
-            with open(registry_file, 'r') as f:
-                registry = json.load(f)
-        else:
-            registry = {'models': []}
+        # Use ModelRegistry to ensure consistency
+        registry = ModelRegistry(models_directory=self.model_dir)
         
-        # Add new model entry
-        model_entry = {
-            'version': metadata.version,
-            'model_type': metadata.model_type,
-            'training_date': metadata.training_date.isoformat() if isinstance(metadata.training_date, datetime) else str(metadata.training_date),
-            'path': str(model_path),
-            'performance_metrics': metadata.performance_metrics
-        }
-        
-        registry['models'].append(model_entry)
-        
-        # Save updated registry
-        with open(registry_file, 'w') as f:
-            json.dump(registry, f, indent=2)
+        # Register the model
+        registry.register_model(
+            model_path=str(model_path),
+            metadata=metadata.to_dict(),
+            version=metadata.version
+        )
         
         logger.info(f"Registry updated with model version {metadata.version}")
     

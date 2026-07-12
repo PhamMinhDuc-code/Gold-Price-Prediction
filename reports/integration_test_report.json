@@ -1,0 +1,28 @@
+{
+    "report_name": "integration_test_report",
+    "generated_at": "2026-07-12T20:38:39.176246",
+    "metrics": {
+        "MAE": 12.5,
+        "RMSE": 18.3,
+        "MAPE": 2.1,
+        "R2": 0.94,
+        "Directional_Accuracy": 78.2
+    },
+    "predictions_summary": {
+        "count": 100,
+        "columns": [
+            "Date",
+            "Actual",
+            "Predicted",
+            "Lower_CI",
+            "Upper_CI"
+        ]
+    },
+    "plot_paths": [
+        "D:\\Gold Prediction\\reports\\integration_test_report_plot_1.png",
+        "D:\\Gold Prediction\\reports\\integration_test_report_plot_2.png",
+        "D:\\Gold Prediction\\reports\\integration_test_report_plot_3.png",
+        "D:\\Gold Prediction\\reports\\integration_test_report_plot_4.png"
+    ],
+    "predictions_csv_path": "D:\\Gold Prediction\\reports\\integration_test_report_predictions.csv"
+}

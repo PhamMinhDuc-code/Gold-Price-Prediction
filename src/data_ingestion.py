@@ -18,6 +18,12 @@ from dataclasses import dataclass
 import logging
 
 from src.logger import get_logger
+from src.exceptions import (
+    DataValidationError,
+    MissingColumnError,
+    ChronologicalOrderError,
+    ConstraintViolationError
+)
 
 logger = get_logger(__name__)
 
@@ -130,28 +136,50 @@ class DataIngestionManager:
             error_msg = f"Missing required columns: {missing_columns}"
             errors.append(error_msg)
             logger.error(error_msg)
-            return ValidationResult(is_valid=False, errors=errors, warnings=warnings)
+            # Raise descriptive exception (Requirement 10.1)
+            raise MissingColumnError(missing_columns)
         
         # Validate High >= Low constraint (Requirement 1.7)
         high_low_violations = df[df['High'] < df['Low']]
         if not high_low_violations.empty:
+            violation_indices = high_low_violations.index.tolist()
             error_msg = f"High < Low constraint violated in {len(high_low_violations)} records"
             errors.append(error_msg)
-            logger.error(f"{error_msg}: {high_low_violations.index.tolist()[:5]}")
+            logger.error(f"{error_msg}: {violation_indices[:5]}")
+            # Raise descriptive exception with specific details (Requirement 10.1)
+            raise ConstraintViolationError(
+                constraint_type='High < Low',
+                violation_count=len(high_low_violations),
+                violation_indices=violation_indices
+            )
         
         # Validate Close within [Low, High] range (Requirement 1.8)
         close_violations = df[(df['Close'] < df['Low']) | (df['Close'] > df['High'])]
         if not close_violations.empty:
+            violation_indices = close_violations.index.tolist()
             error_msg = f"Close outside [Low, High] range in {len(close_violations)} records"
             errors.append(error_msg)
-            logger.error(f"{error_msg}: {close_violations.index.tolist()[:5]}")
+            logger.error(f"{error_msg}: {violation_indices[:5]}")
+            # Raise descriptive exception with specific details (Requirement 10.1)
+            raise ConstraintViolationError(
+                constraint_type='Close outside [Low, High]',
+                violation_count=len(close_violations),
+                violation_indices=violation_indices
+            )
         
         # Validate Open within [Low, High] range (Requirement 1.8)
         open_violations = df[(df['Open'] < df['Low']) | (df['Open'] > df['High'])]
         if not open_violations.empty:
+            violation_indices = open_violations.index.tolist()
             error_msg = f"Open outside [Low, High] range in {len(open_violations)} records"
             errors.append(error_msg)
-            logger.error(f"{error_msg}: {open_violations.index.tolist()[:5]}")
+            logger.error(f"{error_msg}: {violation_indices[:5]}")
+            # Raise descriptive exception with specific details (Requirement 10.1)
+            raise ConstraintViolationError(
+                constraint_type='Open outside [Low, High]',
+                violation_count=len(open_violations),
+                violation_indices=violation_indices
+            )
         
         # Check for missing values (flag for later handling)
         missing_values = df[required_cols].isna().sum()
@@ -202,10 +230,14 @@ class DataIngestionManager:
         else:
             logger.error("Dates are NOT in chronological order")
             # Find first out-of-order date
+            first_violation_idx = None
             for i in range(1, len(df.index)):
                 if df.index[i] < df.index[i-1]:
+                    first_violation_idx = i
                     logger.error(f"Out of order at index {i}: {df.index[i-1]} -> {df.index[i]}")
                     break
+            # Raise descriptive exception (Requirement 10.1)
+            raise ChronologicalOrderError(first_violation_index=first_violation_idx)
         
         return is_sorted
     

@@ -1,0 +1,34 @@
+{
+  "version": "demo_v1.0",
+  "model_type": "LSTM",
+  "training_date": "2026-07-12T19:06:20.840289",
+  "feature_list": [
+    "feature_0",
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5",
+    "feature_6",
+    "feature_7",
+    "feature_8",
+    "feature_9"
+  ],
+  "sequence_length": 60,
+  "scaling_params": {
+    "Close": {
+      "method": "minmax",
+      "min": 1800.0,
+      "max": 2000.0
+    }
+  },
+  "performance_metrics": {
+    "mae": 15.5,
+    "rmse": 22.3,
+    "r2": 0.82
+  },
+  "hyperparameters": {
+    "units_layer1": 32,
+    "learning_rate": 0.001
+  }
+}
