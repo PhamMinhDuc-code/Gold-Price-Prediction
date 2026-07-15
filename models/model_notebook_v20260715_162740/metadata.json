@@ -1,0 +1,176 @@
+{
+  "version": "notebook_v20260715_162740",
+  "model_type": "XGBoost",
+  "training_date": "2026-07-15T16:27:40.789184",
+  "hyperparameters": {
+    "max_depth": 5,
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0
+  },
+  "feature_list": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "Close_lag_1",
+    "Close_lag_7",
+    "Close_lag_14",
+    "Close_lag_30",
+    "Close_ma_7",
+    "Close_ma_14",
+    "Close_ma_30",
+    "Close_ma_90",
+    "Close_std_7",
+    "Close_std_14",
+    "Close_std_30",
+    "RSI_14",
+    "MACD",
+    "MACD_signal",
+    "MACD_diff",
+    "BB_middle",
+    "BB_upper",
+    "BB_lower",
+    "day_of_week",
+    "month",
+    "quarter",
+    "year",
+    "is_quarter_end",
+    "is_year_end"
+  ],
+  "scaling_params": {
+    "method": "minmax",
+    "params": {
+      "Open": {
+        "min": 412.2,
+        "max": 1907.64
+      },
+      "High": {
+        "min": 413.3,
+        "max": 1920.61
+      },
+      "Low": {
+        "min": 409.8,
+        "max": 1874.11
+      },
+      "Close": {
+        "min": 412.3,
+        "max": 1899.54
+      },
+      "Volume": {
+        "min": 2.0,
+        "max": 464971.0
+      },
+      "Close_lag_1": {
+        "min": 412.3,
+        "max": 1899.54
+      },
+      "Close_lag_7": {
+        "min": 412.3,
+        "max": 1899.54
+      },
+      "Close_lag_14": {
+        "min": 411.6,
+        "max": 1899.54
+      },
+      "Close_lag_30": {
+        "min": 397.6,
+        "max": 1899.54
+      },
+      "Close_ma_7": {
+        "min": 415.22857142857146,
+        "max": 1860.82
+      },
+      "Close_ma_14": {
+        "min": 417.52142857142854,
+        "max": 1840.3664285714287
+      },
+      "Close_ma_30": {
+        "min": 410.7300000000001,
+        "max": 1817.1133333333335
+      },
+      "Close_ma_90": {
+        "min": 402.21666666666664,
+        "max": 1741.290777777778
+      },
+      "Close_std_7": {
+        "min": 0.9848833615627359,
+        "max": 95.97311471249363
+      },
+      "Close_std_14": {
+        "min": 1.2938782319515743,
+        "max": 88.22705661349457
+      },
+      "Close_std_30": {
+        "min": 3.6218192545508616,
+        "max": 98.86322216352431
+      },
+      "RSI_14": {
+        "min": 3.605066580058619,
+        "max": 96.34264884568653
+      },
+      "MACD": {
+        "min": -52.18450441936693,
+        "max": 69.04788262921306
+      },
+      "MACD_signal": {
+        "min": -41.986605741589514,
+        "max": 58.29843295070123
+      },
+      "MACD_diff": {
+        "min": -28.505627322892504,
+        "max": 16.18123985950095
+      },
+      "BB_middle": {
+        "min": 414.925,
+        "max": 1834.8139999999999
+      },
+      "BB_upper": {
+        "min": 424.38424777247695,
+        "max": 1965.5316534522374
+      },
+      "BB_lower": {
+        "min": 405.46575222752307,
+        "max": 1759.0625442488185
+      },
+      "day_of_week": {
+        "min": 0.0,
+        "max": 4.0
+      },
+      "month": {
+        "min": 1.0,
+        "max": 12.0
+      },
+      "quarter": {
+        "min": 1.0,
+        "max": 4.0
+      },
+      "year": {
+        "min": 2004.0,
+        "max": 2019.0
+      },
+      "is_quarter_end": {
+        "min": 0.0,
+        "max": 1.0
+      },
+      "is_year_end": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    }
+  },
+  "performance_metrics": {
+    "mae": 9.574487928361684,
+    "rmse": 13.260642163282506,
+    "mape": 1.0566043922920516,
+    "r2": 0.9990434775555659,
+    "directional_accuracy": 71.60647571606475
+  },
+  "training_data_range": [
+    "2004-10-18T00:00:00",
+    "2019-05-28T00:00:00"
+  ],
+  "sequence_length": null
+}

@@ -1,7 +1,7 @@
 # Gold Price Prediction System - Dependencies
 
 # Deep Learning Frameworks
-# Note: TensorFlow may not be available for Python 3.14+
+# Note: TensorFlow may not be available for Python 3.12+/3.13+
 # Using Keras 3 with JAX backend as alternative
 keras>=3.0.0
 jax>=0.4.0
@@ -23,7 +23,10 @@ matplotlib>=3.6.0
 seaborn>=0.12.0
 
 # Technical Indicators
-pandas-ta>=0.3.0
+# NOTE: pandas-ta removed - package unavailable/unmaintained on PyPI.
+# feature_engineering.py already has a manual fallback for RSI/MACD/Bollinger
+# Bands when pandas-ta is not installed, so this is safe to omit.
+# pandas-ta>=0.3.0
 
 # Model Persistence
 joblib>=1.2.0
@@ -36,3 +39,7 @@ pytest-mock>=3.10.0
 # Utilities
 python-dateutil>=2.8.2
 pytz>=2022.7
+
+# Notebook support
+jupyter
+ipykernel

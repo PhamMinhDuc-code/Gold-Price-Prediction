@@ -1,3 +1,36 @@
-/.idea
-/.idea
-/logs
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/*.log
+
+# Trained models (thường nặng, nên không commit; có thể dùng Git LFS nếu cần)
+models/*
+!models/.gitkeep
+
+# Generated reports / demo outputs
+reports/*
+!reports/.gitkeep
+
+# Data files (nếu CSV nặng, không nên commit; cân nhắc .gitignore hoặc Git LFS)
+data/*.csv
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings (tùy chọn - có thể giữ nếu muốn đồng bộ settings cho team)
+# .vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables (nếu có API keys...)
+.env

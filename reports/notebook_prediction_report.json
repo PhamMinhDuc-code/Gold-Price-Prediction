@@ -1,0 +1,25 @@
+{
+    "report_name": "notebook_prediction_report",
+    "generated_at": "2026-07-15T16:28:23.434337",
+    "metrics": {
+        "mae": 9.574487928361684,
+        "rmse": 13.260642163282506,
+        "mape": 1.0566043922920516,
+        "r2": 0.9990434775555659,
+        "directional_accuracy": 71.60647571606475
+    },
+    "predictions_summary": {
+        "count": 30,
+        "columns": [
+            "Date",
+            "Predicted_Close",
+            "Lower_CI",
+            "Upper_CI",
+            "Close"
+        ]
+    },
+    "plot_paths": [
+        "D:\\FULearning\\Summer_2026\\DTA301\\Gold-Prediction\\reports\\notebook_prediction_report_plot_1.png"
+    ],
+    "predictions_csv_path": "D:\\FULearning\\Summer_2026\\DTA301\\Gold-Prediction\\reports\\notebook_prediction_report_predictions.csv"
+}

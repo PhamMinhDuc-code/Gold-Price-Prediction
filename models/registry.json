@@ -114,7 +114,49 @@
         "r2": 0.82
       },
       "registered_at": "2026-07-12T19:06:20.841898"
+    },
+    {
+      "version": "notebook_v20260715_155959",
+      "model_type": "XGBoost",
+      "training_date": "2026-07-15T15:59:59.928174",
+      "path": "D:\\FULearning\\Summer_2026\\DTA301\\Gold-Prediction\\models\\model_notebook_v20260715_155959",
+      "performance_metrics": {
+        "mae": 0.006437755120532331,
+        "rmse": 0.008916275049406805,
+        "mape": 11161643.409054639,
+        "r2": 0.999043477737167,
+        "directional_accuracy": 71.60647571606475
+      },
+      "registered_at": "2026-07-15T15:59:59.943914"
+    },
+    {
+      "version": "notebook_v20260715_160503",
+      "model_type": "XGBoost",
+      "training_date": "2026-07-15T16:05:03.863097",
+      "path": "D:\\FULearning\\Summer_2026\\DTA301\\Gold-Prediction\\models\\model_notebook_v20260715_160503",
+      "performance_metrics": {
+        "mae": 0.006437755120532331,
+        "rmse": 0.008916275049406805,
+        "mape": 11161643.409054639,
+        "r2": 0.999043477737167,
+        "directional_accuracy": 71.60647571606475
+      },
+      "registered_at": "2026-07-15T16:05:03.915574"
+    },
+    {
+      "version": "notebook_v20260715_162740",
+      "model_type": "XGBoost",
+      "training_date": "2026-07-15T16:27:40.789184",
+      "path": "D:\\FULearning\\Summer_2026\\DTA301\\Gold-Prediction\\models\\model_notebook_v20260715_162740",
+      "performance_metrics": {
+        "mae": 9.574487928361684,
+        "rmse": 13.260642163282506,
+        "mape": 1.0566043922920516,
+        "r2": 0.9990434775555659,
+        "directional_accuracy": 71.60647571606475
+      },
+      "registered_at": "2026-07-15T16:27:40.835526"
     }
   ],
-  "last_updated": "2026-07-12T19:06:20.841901"
+  "last_updated": "2026-07-15T16:27:40.835526"
 }

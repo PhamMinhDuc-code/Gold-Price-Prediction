@@ -259,7 +259,12 @@ class PredictionService:
                 input_features = np.expand_dims(input_features, axis=0)
         
         # Make prediction
-        prediction = self.model.predict(input_features, verbose=0)
+        # NOTE: `verbose` is a Keras-only kwarg (LSTM/GRU). XGBoost/RandomForest's
+        # predict() does not accept it, so only pass it for sequence models.
+        if self.model_type in ['LSTM', 'GRU']:
+            prediction = self.model.predict(input_features, verbose=0)
+        else:
+            prediction = self.model.predict(input_features)
         
         # Extract scalar value
         if isinstance(prediction, np.ndarray):
