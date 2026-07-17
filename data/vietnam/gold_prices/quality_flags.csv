@@ -1,0 +1,6 @@
+source,date,rule,buy,sell
+giavang_sjc_archive,2020-08-12,spread_out_of_era_range,52560000.0,56380000.0
+giavang_sjc_archive,2020-08-13,spread_out_of_era_range,53180000.0,55780000.0
+giavang_sjc_archive,2025-03-21,abs_return_gt_10pct,94700000.0,97700000.0
+webgia_sjc_archive,2020-08-12,spread_out_of_era_range,52860000.0,56680000.0
+webgia_sjc_archive,2020-08-13,spread_out_of_era_range,53180000.0,55780000.0

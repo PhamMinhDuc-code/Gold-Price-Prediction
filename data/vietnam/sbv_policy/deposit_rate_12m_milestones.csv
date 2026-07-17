@@ -1,0 +1,26 @@
+effective_date,deposit_rate_12m_pct,bank_reference,source_note,confidence
+2010-01-01,10.49,VCB/big4,Dong thuan lai suat huy dong ~10.5% dau 2010 (Hiep hoi Ngan hang),approx
+2010-11-15,12.00,VCB/big4,Lai suat huy dong tang manh cuoi 2010 sau khi NHNN tang lai suat co ban len 9%,approx
+2011-03-03,14.00,VCB/big4,Thong tu 02/2011/TT-NHNN ap tran lai suat huy dong 14%/nam,high
+2012-03-13,13.00,VCB/big4,NHNN ha tran lai suat huy dong xuong 13% (TT 05/2012),high
+2012-05-28,11.00,VCB/big4,NHNN ha tran xuong 11% (TT 17/2012),high
+2012-06-11,11.00,VCB/big4,TT 19/2012: tran 9% chi ap cho ky han <12 thang; ky han 12T tha noi ~11%,approx
+2012-12-24,10.50,VCB/big4,Tran ky han ngan xuong 8%; 12T big4 ~10-11%,approx
+2013-06-28,8.50,VCB/big4,Tran ky han ngan 7%; VCB 12T ~8.5%,approx
+2014-03-18,7.00,VCB/big4,NHNN ha tran ky han ngan xuong 6%; VCB 12T ~7%,approx
+2014-10-29,6.20,VCB/big4,Tran ky han ngan 5.5%; VCB 12T giam ve ~6.2%,approx
+2015-09-29,6.20,VCB/big4,On dinh; VCB 12T 6.2%/nam giai doan 2015,approx
+2016-09-26,6.50,VCB/big4,VCB niem yet 12T 6.5%/nam; duy tri 2016-2019,high
+2019-11-19,6.80,VCB/big4,Cuoi 2019 12T big4 pho bien 6.8%,approx
+2020-05-13,6.10,VCB/big4,NHNN ha lai suat dieu hanh dot 2 (COVID); big4 12T ve ~6.1%,approx
+2020-10-01,5.60,VCB/big4,Big4 12T giam ve 5.6% cuoi 2020,high
+2021-08-01,5.50,VCB/big4,Nen lai suat thap ky luc; VCB 12T 5.5%,high
+2022-10-26,7.40,VCB/big4,NHNN tang lai suat dieu hanh 2 dot (9-10/2022) sau vu SCB; big4 12T len 7.4%,high
+2023-03-15,7.20,VCB/big4,NHNN bat dau chu ky ha lai suat dieu hanh 2023 (4 dot),high
+2023-06-19,6.30,VCB/big4,Sau dot ha thu 4; big4 12T ~6.3%,approx
+2023-09-14,5.50,VCB/big4,VCB ha 12T xuong 5.5%,approx
+2023-12-31,4.80,VCB/big4,Cuoi 2023 VCB 12T 4.8% - vung day lich su,high
+2024-04-01,4.60,VCB/big4,VCB 12T cham day 4.6% dau Q2/2024,high
+2024-11-01,4.60,VCB/big4,Big4 giu 4.6-4.7% suot cuoi 2024,approx
+2025-03-01,4.60,VCB/big4,NHNN yeu cau on dinh mat bang lai suat (2/2025); big4 giu 4.6%,approx
+2026-01-01,4.60,VCB/big4,Duy tri nen thap; can doi chieu bang niem yet VCB hien tai trong retail_deposit_rates.csv,approx

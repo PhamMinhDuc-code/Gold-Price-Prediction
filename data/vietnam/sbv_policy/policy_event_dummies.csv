@@ -1,0 +1,7 @@
+event_date,event_name,dummy_name,dummy_type,start_date,end_date,source,note
+2012-05-25,Nghi dinh 24/2012/ND-CP hieu luc - doc quyen vang mieng SJC,d_nd24_regime,regime,2012-05-25,2025-10-09,https://vanban.chinhphu.vn/?pageid=27160&docid=157488,Nha nuoc doc quyen san xuat vang mieng; SJC tro thanh thuong hieu quoc gia; premium SJC hinh thanh tu day
+2013-03-28,NHNN bat dau dau thau vang mieng dot 2013,d_auction_2013,regime,2013-03-28,2013-12-31,sbv.gov.vn,76 phien dau thau nam 2013 ban ~68 tan vang de tat toan trang thai vang cua cac TCTD
+2024-04-22,NHNN dau thau vang mieng tro lai sau 11 nam,d_intervention_2024,regime,2024-04-22,2024-05-27,sbv.gov.vn thong cao bao chi 4/2024,9 phien dau thau; 6 phien thanh cong; muc tieu thu hep chenh lech gia SJC vs the gioi
+2024-05-27,NHNN dung dau thau - chuyen sang ban vang truc tiep,d_direct_sale_2024,regime,2024-06-03,2025-10-09,sbv.gov.vn thong cao 27/05/2024,Ban vang binh on qua 4 NHTM nha nuoc (VCB BIDV CTG AGR) + SJC tu 03/06/2024; premium SJC giam manh giai doan nay
+2025-10-10,Nghi dinh 232/2025/ND-CP hieu luc - bo doc quyen vang mieng SJC,d_nd232_regime,regime,2025-10-10,,https://xaydungchinhsach.chinhphu.vn (ND 232/2025 ky 26/08/2025),Xoa co che doc quyen; NH va DN du dieu kien duoc cap phep san xuat vang mieng; structural break lon nhat cua premium - PHAI co dummy nay trong model
+2026-07-16,NHNN to chuc dau thau vang (su kien trong sbv_gold_policy_events.csv),d_auction_2026,pulse,2026-07-16,2026-07-16,vietnam/sbv_policy/sbv_gold_policy_events.csv,Su kien da co san trong du lieu project
